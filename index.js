@@ -38,11 +38,13 @@ function renderPage(page, url, filename) {
     setTimeout(function () {
       evaluate(function() {
         document.body.bgColor = 'white';
+        $('.jqmOverlay').remove();
+        $('.lbPop').remove();
       });
       var render = Promise.promisify(page.render);
       console.log('Rendering', url, 'to', filename);
       d.resolve(render(filename));
-    }, 0);
+    }, 2000);
 
     return d.promise;
   });
