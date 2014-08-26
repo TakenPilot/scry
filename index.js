@@ -42,7 +42,7 @@ function renderPage(page, url, filename) {
       var render = Promise.promisify(page.render);
       console.log('Rendering', url, 'to', filename);
       d.resolve(render(filename));
-    }, 3000);
+    }, 0);
 
     return d.promise;
   });
